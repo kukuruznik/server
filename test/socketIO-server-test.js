@@ -1,8 +1,7 @@
 /* global describe, it */
 var
-	HOST = process.env.IP,
 	PORT = process.env.PORT,
-	SERVER_URL = "http://0.0.0.0:5678",
+	SERVER_URL = "http://0.0.0.0:" + PORT,
 
 	should = require("chai").should(),
 	http = require("http"),
