@@ -10,7 +10,7 @@ var
 	asynchronize = commons.async.asynchronize,
 	ServerWithSocketIO = {};
 
-ServerWithSocketIO.port = DEFAULT_PORT;
+ServerWithSocketIO.port = DEFAULT_PORT || 8888;
 
 ServerWithSocketIO.eventName = DEFAULT_EVENT_NAME;
 

@@ -1,8 +1,5 @@
 /* global describe, it */
 var
-	PORT = process.env.PORT,
-	SERVER_URL = "http://0.0.0.0:" + PORT,
-
 	should = require("chai").should(),
 	http = require("http"),
 	commons = require("commons"),
@@ -10,11 +7,12 @@ var
 	asyncTools = commons.async,
 	SocketIO_client = require("socket.io-client"),
 	SocketIO_server = require("../socket.io/socketIO-server"),
+	url = "http://0.0.0.0:" + SocketIO_server.port,
 	async = asyncTools.asynchronize(global); // let's prepare the async version of setTimeout() and such...
 
 function getClient() {
 	var
-		io = SocketIO_client(SERVER_URL, {multiplex: false});
+		io = SocketIO_client(url, {multiplex: false});
 
 	io.async = asyncTools.asynchronize(io);
 	return io;
